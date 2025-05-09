@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import User from './User';
+import { UserContext } from '../context/UserContext';
 
 function SignUpForm() {
 
@@ -12,7 +13,7 @@ function SignUpForm() {
     })
 
     const [error, setError] = useState('');
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useContext(UserContext)
 
     const handleChanges = (e) => {
         const { name, value } = e.target
